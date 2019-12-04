@@ -1,0 +1,127 @@
+import math
+
+
+DAY1_DATA = [
+    113348,
+    85199,
+    56077,
+    108338,
+    88842,
+    86765,
+    127040,
+    88557,
+    87886,
+    110849,
+    95682,
+    131611,
+    79658,
+    139439,
+    62467,
+    82333,
+    79414,
+    116672,
+    118256,
+    127660,
+    59774,
+    67990,
+    81653,
+    143436,
+    101701,
+    90571,
+    131983,
+    70494,
+    86232,
+    137759,
+    87992,
+    107601,
+    141275,
+    100261,
+    133153,
+    136706,
+    84363,
+    114771,
+    115167,
+    64509,
+    97324,
+    70627,
+    93215,
+    60459,
+    145358,
+    102741,
+    85623,
+    145687,
+    106837,
+    146764,
+    91837,
+    80190,
+    114857,
+    133985,
+    55423,
+    60612,
+    63556,
+    139326,
+    73907,
+    71478,
+    95854,
+    87886,
+    91624,
+    85675,
+    141381,
+    122392,
+    73756,
+    131710,
+    99053,
+    135684,
+    114005,
+    95885,
+    75545,
+    55703,
+    80835,
+    106478,
+    74307,
+    113562,
+    134192,
+    117605,
+    138161,
+    132905,
+    117676,
+    125103,
+    147899,
+    107373,
+    142169,
+    72084,
+    68682,
+    115345,
+    63130,
+    143231,
+    72135,
+    91780,
+    122640,
+    74195,
+    84365,
+    97015,
+    81773,
+    74146,
+]
+
+
+def solve_day_1():
+    """
+    Fuel required to launch a given module is based on its mass. Specifically, to find the fuel required for a module,
+    take its mass, divide by three, round down, and subtract 2.
+
+    The Fuel Counter-Upper needs to know the total fuel requirement. To find it,
+    individually calculate the fuel needed for the mass of each module (your puzzle input),
+    then add together all the fuel values.
+
+    What is the sum of the fuel requirements for all of the modules on your spacecraft?
+    :return:
+    """
+
+    def calc_module(input: int):
+        return (math.floor(input / 3.0) - 2)
+
+    result = sum(map(calc_module, DAY1_DATA))
+    print(result)
+
+solve_day_1()
